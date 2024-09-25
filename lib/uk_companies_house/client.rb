@@ -9,7 +9,7 @@ module UkCompaniesHouse
 
     def connection
       @connection ||= begin
-        Faraday.new(:url => 'https://api.companieshouse.gov.uk/') do |faraday|
+        Faraday.new(:url => 'https://api.company-information.service.gov.uk/') do |faraday|
           faraday.headers['Authorization'] = @api_key
           faraday.response :json, :content_type => /\bjson$/
           faraday.adapter Faraday.default_adapter
